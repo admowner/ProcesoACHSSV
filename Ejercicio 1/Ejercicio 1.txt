@@ -1,0 +1,160 @@
+Reservar Hora usuario previamente registrado buscando por especialidad
+Reservar Hora usuario previamente registrado buscando por profesional
+Reservar Hora usuario sin registrar buscando por especialidad
+Reservar Hora usuario sin registrar buscando por profesional
+Reservar Hora usuario previamente registrado Ingresando un correo electronico sin formato
+
+
+Feature: Solicitud de hora medica de un usuario previamente registrado
+
+    Como un usuario registrado en el sistema
+    Quiero solicitar una hora al medio en una clinica RedSalud
+    Buscando por Especialidad
+
+
+    Scenario: Reservar Hora usuario previamente registrado buscando por especialidad
+        Given que navego a www.redsalud.cl
+        When presiono el boton "RESERVAR HORA"
+        And selecciono tipo de documento "Carnet de identidad"
+        And ingreso en el campo de N de documento el Rut "17601351-6"
+	And hago clic en boton Continuar
+        Then Selecciona menu "Búsqueda por especialidad"
+        And selecciono area la opcion "Medica"
+	And ingreso en el campo Especialidad "MEDICINA GENERAL ADULTO"
+        And ingreso en el campo Región o centro "Clínica REDSALUD SANTIAGO (EX BICENTENARIO)"
+	And hago clic en boton "Continuar"
+        Then selecciono fecha de hoy "Ju 30 Ene."
+        And Selecciono primera hora disponible en el primer doctor 
+	Then Ingreso Numero de Telefono Principal "956033622"
+	And Ingreso correo electronico "sebav1990@gmail.com
+	And Selecciono opcion No soy un Robot
+	And hago clic en boton "RESERVAR HORA"
+	Then Validar Hora Generada.
+
+
+Feature: Solicitud de hora medica de un usuario previamente registrado
+
+    Como un usuario registrado en el sistema
+    Quiero solicitar una hora al medio en una clinica RedSalud
+    Buscando por Medico
+
+
+    Scenario: Reservar Hora usuario previamente registrado buscando por especialidad
+        Given que navego a www.redsalud.cl
+        When presiono el boton "RESERVAR HORA"
+        And selecciono tipo de documento "Carnet de identidad"
+        And ingreso en el campo de N de documento el Rut "17601351-6"
+	And hago clic en boton Continuar
+        Then Selecciona menu "Búsqueda por Profesional"
+        And selecciono area la opcion "Medica"
+        And ingreso en el campo nombre del medico "CRISTIAN ANDRES GABELLA PETRIDIS"
+	And hago clic en boton "Continuar"
+        Then selecciono fecha de hoy "Ju 30 Ene."
+        And Selecciono primera hora disponible en el primer doctor 
+	Then Ingreso Numero de Telefono Principal "956033622"
+	And Ingreso correo electronico "sebav1990@gmail.com
+	And Selecciono opcion No soy un Robot
+	And hago clic en boton "RESERVAR HORA"
+	Then Validar Hora Generada.
+
+
+Feature: Solicitud de hora medica de un usuario nunca antes registrado
+
+    Como un usuario sin registro en el sistema
+    Quiero solicitar una hora al medio en una clinica RedSalud
+    Buscando por Especialidad
+
+
+    Scenario: Reservar Hora usuario previamente registrado buscando por especialidad
+        Given que navego a www.redsalud.cl
+        When presiono el boton "RESERVAR HORA"
+        And selecciono tipo de documento "Carnet de identidad"
+        And ingreso en el campo de N de documento el Rut "17601351-6"
+	And hago clic en boton Continuar
+	Then ingreso en el campo nombre el nombre del paciente "Sebastian"
+	And ingreso el Apellido Paterno del paciente "Vergara"
+	And ingreso el Apellido Materno del paciente "Herrera"
+	And selecciono el Sexo del paciente la opcion "Masculino"
+	And ingreso  fecha de nacimiento del paciente "16-11-1990"
+	And ingreso  numero de telefono del paciente  "956033622"
+	And ingreso  correo electronico del paciente "sebav1990@gmail.com"
+	And Seleccionar Plan complementario (Seleccionar Isapre) "Cruz Blanca"
+	And Hacer click en No soy un Robot
+	And Seleccionar Boton Siguiente
+        Then Selecciona menu "Búsqueda por especialidad"
+        And selecciono area la opcion "Medica"
+	And ingreso en el campo Especialidad "MEDICINA GENERAL ADULTO"
+        And ingreso en el campo Región o centro "Clínica REDSALUD SANTIAGO (EX BICENTENARIO)"
+	And hago clic en boton "Continuar"
+        Then selecciono fecha de hoy "Ju 30 Ene."
+        And Selecciono primera hora disponible en el primer doctor 
+	Then Ingreso Numero de Telefono Principal "956033622"
+	And Ingreso correo electronico "sebav1990@gmail.com
+	And Selecciono opcion No soy un Robot
+	And hago clic en boton "RESERVAR HORA"
+	Then Validar Hora Generada.
+
+
+Feature: Solicitud de hora medica de un usuario nunca antes registrado
+
+    Como un usuario sin registro en el sistema
+    Quiero solicitar una hora al medio en una clinica RedSalud
+    Buscando por Medico
+
+
+    Scenario: Reservar Hora usuario previamente registrado buscando por especialidad
+        Given que navego a www.redsalud.cl
+        When presiono el boton "RESERVAR HORA"
+        And selecciono tipo de documento "Carnet de identidad"
+        And ingreso en el campo de N de documento el Rut "17601351-6"
+	And hago clic en boton Continuar
+	Then ingreso en el campo nombre el nombre del paciente "Sebastian"
+	And ingreso el Apellido Paterno del paciente "Vergara"
+	And ingreso el Apellido Materno del paciente "Herrera"
+	And selecciono el Sexo del paciente la opcion "Masculino"
+	And ingreso  fecha de nacimiento del paciente "16-11-1990"
+	And ingreso  numero de telefono del paciente  "956033622"
+	And ingreso  correo electronico del paciente "sebav1990@gmail.com"
+	And Seleccionar Plan complementario (Seleccionar Isapre) "Cruz Blanca"
+	And Hacer click en No soy un Robot
+	And Seleccionar Boton Siguiente
+        Then Selecciona menu "Búsqueda por Profesional"
+        And selecciono area la opcion "Medica"
+        And ingreso en el campo nombre del medico "CRISTIAN ANDRES GABELLA PETRIDIS"
+	And hago clic en boton "Continuar"
+        Then selecciono fecha de hoy "Ju 30 Ene."
+        And Selecciono primera hora disponible en el primer doctor 
+	Then Ingreso Numero de Telefono Principal "956033622"
+	And Ingreso correo electronico "sebav1990@gmail.com
+	And Selecciono opcion No soy un Robot
+	And hago clic en boton "RESERVAR HORA"
+	Then Validar Hora Generada.
+
+
+Feature: Solicitud de hora medica de un usuario previamente registrado
+
+    Como un usuario registrado en el sistema
+    Quiero solicitar una hora al medio en una clinica RedSalud
+    Buscando por Especialidad
+
+
+    Scenario: Reservar Hora usuario previamente registrado buscando por especialidad
+        Given que navego a www.redsalud.cl
+        When presiono el boton "RESERVAR HORA"
+        And selecciono tipo de documento "Carnet de identidad"
+        And ingreso en el campo de N de documento el Rut "17601351-6"
+	And hago clic en boton Continuar
+        Then Selecciona menu "Búsqueda por especialidad"
+        And selecciono area la opcion "Medica"
+	And ingreso en el campo Especialidad "MEDICINA GENERAL ADULTO"
+        And ingreso en el campo Región o centro "Clínica REDSALUD SANTIAGO (EX BICENTENARIO)"
+	And hago clic en boton "Continuar"
+        Then selecciono fecha de hoy "Ju 30 Ene."
+        And Selecciono primera hora disponible en el primer doctor 
+	Then Ingreso Numero de Telefono Principal "956033622"
+	And Ingreso correo electronico "sebav1990gmail.com
+	And Selecciono opcion No soy un Robot
+	And hago clic en boton "RESERVAR HORA"
+	Then Validar Hora Generada.
+
+    
