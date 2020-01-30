@@ -154,6 +154,6 @@ Feature: Solicitud de hora medica de un usuario previamente registrado
 	Then Ingreso Numero de Telefono Principal "956033622"
 	And Ingreso correo electronico "sebav1990gmail.com
 	And Selecciono opcion No soy un Robot
-	Then Validar Hora Generada.
+	Then Validar que no se pueda presionar el boton "RESERVAR HORA"
 
     
